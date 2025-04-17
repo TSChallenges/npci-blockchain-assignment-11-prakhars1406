@@ -1,0 +1,73 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# ---------------------------------------------------------------------------
+# "OrdererOrgs" - Definition of organizations managing orderer nodes
+# ---------------------------------------------------------------------------
+OrdererOrgs:
+  # ---------------------------------------------------------------------------
+  # Orderer
+  # ---------------------------------------------------------------------------
+  - Name: OrdererOrg
+    Domain: loc.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+
+# ---------------------------------------------------------------------------
+# "PeerOrgs" - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+PeerOrgs:
+  # ---------------------------------------------------------------------------
+  # TataMotors (Importer)
+  # ---------------------------------------------------------------------------
+  - Name: TataMotors
+    Domain: tatamotors.loc.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 2  # 1 admin + 1 user
+
+  # ---------------------------------------------------------------------------
+  # Tesla (Exporter)
+  # ---------------------------------------------------------------------------
+  - Name: Tesla
+    Domain: tesla.loc.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 2  # 1 admin + 1 user
+
+  # ---------------------------------------------------------------------------
+  # ICICIBank (Issuing Bank)
+  # ---------------------------------------------------------------------------
+  - Name: ICICIBank
+    Domain: icicibank.loc.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 2  # 1 admin + 1 user
+
+  # ---------------------------------------------------------------------------
+  # ChaseBank (Advising Bank)
+  # ---------------------------------------------------------------------------
+  - Name: ChaseBank
+    Domain: chasebank.loc.com
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+    Users:
+      Count: 2  # 1 admin + 1 user

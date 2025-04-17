@@ -1,0 +1,28 @@
+# Fabric and Docker related
+/fabric-samples/
+/chaincode/vendor/
+/network/organizations/
+*.tar.gz
+*.pem
+*.json
+*.block
+*.pb
+*.tx
+*.db
+/wallet/
+/SubmissionImages/*.png
+/SubmissionImages/*.jpg
+/SubmissionImages/*.jpeg
+
+# General
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+
+# Go
+bin/
+.vscode/
+go.sum
